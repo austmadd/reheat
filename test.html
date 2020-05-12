@@ -3,3 +3,21 @@ if ( rand==0){
     window.location = "www.google.com";}
 if ( rand==1){
     window.location = "www.yahoo.com";}
+
+
+var myAbTest = ABTest({
+    name: "Example_Test",
+    customVarSlot: 1,
+    variations: {
+        first_variation: function () {
+            document.getElementById("panda").src = "images/panda2.jpg";
+            document.getElementById("footer-text").innerHTML = "This is the first variation.";
+        },
+        another_variation: function () {
+            document.getElementById("panda").src = "images/panda3.jpg";
+            document.getElementById("footer-text").innerHTML = "This is another variation.";
+        },
+        control: function () { /* Empty function. */
+        }
+    }
+});
